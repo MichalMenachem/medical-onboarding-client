@@ -1,0 +1,11 @@
+.welcome-text {
+  font-weight: bold;
+  margin: 0;
+  padding: 0rem 1.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.start-button {
+  width: 35%;
+}

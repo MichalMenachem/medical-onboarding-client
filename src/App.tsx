@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { LandingScreen } from "./steps/LandingScreen";
+import { StepsContext } from "./contexts/StepsContext";
 
 function App() {
+  const [curStep, setCurStep] = useState(0);
+
   return (
-    <div className="App">
-      <Carousel
-        axis="vertical"
-        showArrows={false}
-        showThumbs={false}
-        transitionTime={400}
-        swipeable={true}
-        showStatus={false}
-        dynamicHeight={false}
-      >
-        <div className="carousel-item">cool</div>
-        <div className="carousel-item">cool</div>
-        <div className="carousel-item">cool</div>
-        <LandingScreen />
-      </Carousel>
-    </div>
+    <StepsContext.Provider
+      value={{
+        currentStep: curStep,
+        next: () => setCurStep(curStep + 1),
+        prev: () => setCurStep(curStep - 1),
+      }}
+    >
+      <div className="App">
+        <Carousel
+          axis="vertical"
+          showArrows={false}
+          showThumbs={false}
+          transitionTime={400}
+          swipeable={false}
+          showStatus={false}
+          dynamicHeight={false}
+          selectedItem={curStep}
+        >
+          <LandingScreen />
+          <div className="carousel-item">cool</div>
+          <div className="carousel-item">cool</div>
+          <div className="carousel-item">cool</div>
+        </Carousel>
+      </div>
+    </StepsContext.Provider>
   );
 }
 

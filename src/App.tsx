@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import { LandingScreen } from "./steps/LandingScreen";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Carousel
+        axis="vertical"
+        showArrows={false}
+        showThumbs={false}
+        transitionTime={400}
+        swipeable={true}
+        showStatus={false}
+        dynamicHeight={false}
+      >
+        <div className="carousel-item">cool</div>
+        <div className="carousel-item">cool</div>
+        <div className="carousel-item">cool</div>
+        <LandingScreen />
+      </Carousel>
     </div>
   );
 }

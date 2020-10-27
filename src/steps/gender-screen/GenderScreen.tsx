@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import "../App.css";
+import "../../App.css";
 import "./gender-screen.css";
-import { StepsContext } from "../contexts/StepsContext";
+import { StepsContext } from "../../contexts/StepsContext";
 import { Button } from "@material-ui/core";
-import { Header } from "./Header";
-import { ReactComponent as FemaleGender } from "../icons/female-gender.svg";
-import { ReactComponent as MaleGender } from "../icons/male-gender.svg";
+import { Header } from "../header/Header";
+import { ReactComponent as FemaleGender } from "../../icons/female-gender.svg";
+import { ReactComponent as MaleGender } from "../../icons/male-gender.svg";
 
 export const GenderScreen = () => {
   const stepsContext = useContext(StepsContext);

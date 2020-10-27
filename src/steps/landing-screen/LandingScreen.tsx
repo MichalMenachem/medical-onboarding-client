@@ -1,7 +1,7 @@
 import { Button } from "@material-ui/core";
 import React, { useContext } from "react";
-import "../App.css";
-import { StepsContext } from "../contexts/StepsContext";
+import "../../App.css";
+import { StepsContext } from "../../contexts/StepsContext";
 import "./landing-screen.css";
 
 export const LandingScreen = () => {

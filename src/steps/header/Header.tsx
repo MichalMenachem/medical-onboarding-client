@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StepsContext } from "../contexts/StepsContext";
+import { StepsContext } from "../../contexts/StepsContext";
 import "./header.css";
 
 export const Header = () => {

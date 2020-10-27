@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { LandingScreen } from "./steps/LandingScreen";
 import { StepsContext } from "./contexts/StepsContext";
+import { GenderScreen } from "./steps/GenderScreen";
 
 function App() {
   const [curStep, setCurStep] = useState(0);
@@ -28,7 +29,7 @@ function App() {
           selectedItem={curStep}
         >
           <LandingScreen />
-          <div className="carousel-item">cool</div>
+          <GenderScreen />
           <div className="carousel-item">cool</div>
           <div className="carousel-item">cool</div>
         </Carousel>

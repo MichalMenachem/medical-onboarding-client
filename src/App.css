@@ -23,3 +23,24 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.standard-text {
+  font-weight: bold;
+  margin: 0;
+  padding: 0rem 1.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.nav-button {
+  background-color: #343c4c !important;
+  color: white !important;
+}
+
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 47%;
+}

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { LandingScreen } from "./steps/LandingScreen";
+import { LandingScreen } from "./steps/landing-screen/LandingScreen";
 import { StepsContext } from "./contexts/StepsContext";
-import { GenderScreen } from "./steps/GenderScreen";
+import { GenderScreen } from "./steps/gender-screen/GenderScreen";
 
 function App() {
   const [curStep, setCurStep] = useState(0);

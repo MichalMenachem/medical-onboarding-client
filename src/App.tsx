@@ -7,6 +7,7 @@ import { StepsContext } from "./contexts/StepsContext";
 import { GenderScreen } from "./steps/gender-screen/GenderScreen";
 import { PatientContext } from "./contexts/PatientContext";
 import { AgeScreen } from "./steps/age-screen/AgeScreen";
+import { LanguageScreen } from "./steps/language-screen/LanguageScreen";
 
 function App() {
   const [curStep, setCurStep] = useState(0);
@@ -49,6 +50,7 @@ function App() {
             <LandingScreen />
             <GenderScreen />
             <AgeScreen />
+            <LanguageScreen />
             <div className="carousel-item">{gender}</div>
             <div className="carousel-item">cool</div>
           </Carousel>

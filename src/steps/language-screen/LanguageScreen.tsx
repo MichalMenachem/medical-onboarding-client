@@ -1,63 +1,65 @@
 import React, { useContext } from "react";
 import "../../App.css";
-import "./age-screen.css";
+import "./language-screen.css";
 import { StepsContext } from "../../contexts/StepsContext";
 import { Button } from "@material-ui/core";
 import { Header } from "../header/Header";
 import { PatientContext } from "../../contexts/PatientContext";
 
-export const AgeScreen = () => {
+export const LanguageScreen = () => {
   const stepsContext = useContext(StepsContext);
   const patientContext = useContext(PatientContext);
 
   return (
-    <div className="carousel-item age-background">
+    <div className="carousel-item lang-background">
       <Header />
-      <p className="standard-text age-text">Please select your age</p>
-      <div className="select-age">
-        <div className="age-choice">
+      <p className="standard-text lang-text">
+        Please select the required language
+      </p>
+      <div className="select-lang">
+        <div className="lang-choice">
           <img
-            src="./assets/age/small-plant.png"
-            alt="small"
-            className="age-icon"
+            src="./assets/language/hebrew.png"
+            alt="hebrew"
+            className="lang-icon"
           />
           <Button
             variant="contained"
             onClick={() => {
-              patientContext.setAge("0-8");
+              patientContext.setLanguage("Hebrew");
             }}
           >
-            0-8
+            Hebrew
           </Button>
         </div>
-        <div className="age-choice">
+        <div className="lang-choice">
           <img
-            src="./assets/age/medium-plant.png"
-            alt="medium"
-            className="age-icon"
+            src="./assets/language/english.png"
+            alt="english"
+            className="lang-icon"
           />
           <Button
             variant="contained"
             onClick={() => {
-              patientContext.setAge("9-17");
+              patientContext.setLanguage("English");
             }}
           >
-            9-17
+            English
           </Button>
         </div>
-        <div className="age-choice">
+        <div className="lang-choice">
           <img
-            src="./assets/age/large-plant.png"
-            alt="large"
-            className="age-icon"
+            src="./assets/language/arabic.png"
+            alt="arabic"
+            className="lang-icon"
           />
           <Button
             variant="contained"
             onClick={() => {
-              patientContext.setAge("18+");
+              patientContext.setLanguage("Arabic");
             }}
           >
-            18+
+            Arabic
           </Button>
         </div>
       </div>

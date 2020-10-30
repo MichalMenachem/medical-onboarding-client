@@ -52,7 +52,8 @@ function App() {
             <AgeScreen />
             <LanguageScreen />
             <div className="carousel-item">{gender}</div>
-            <div className="carousel-item">cool</div>
+            <div className="carousel-item">{age}</div>
+            <div className="carousel-item">{language}</div>
           </Carousel>
         </div>
       </StepsContext.Provider>

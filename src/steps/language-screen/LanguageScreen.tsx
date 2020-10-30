@@ -19,7 +19,7 @@ export const LanguageScreen = () => {
       <div className="select-lang">
         <div className="lang-choice">
           <img
-            src="./assets/language/hebrew.png"
+            src="./assets/language/shalom.png"
             alt="hebrew"
             className="lang-icon"
           />
@@ -34,7 +34,7 @@ export const LanguageScreen = () => {
         </div>
         <div className="lang-choice">
           <img
-            src="./assets/language/english.png"
+            src="./assets/language/hello.png"
             alt="english"
             className="lang-icon"
           />
@@ -49,7 +49,7 @@ export const LanguageScreen = () => {
         </div>
         <div className="lang-choice">
           <img
-            src="./assets/language/arabic.png"
+            src="./assets/language/salam.png"
             alt="arabic"
             className="lang-icon"
           />

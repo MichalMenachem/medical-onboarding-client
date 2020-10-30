@@ -1,31 +1,28 @@
-.gender-background {
+.age-background {
   background: lightgreen;
 }
 
-.gender-text {
+.age-text {
   color: #2d3648;
   /* background-color: white; */
   border-radius: 15px;
 }
 
-.gender-icon {
-  width: 6rem !important;
-  height: 6rem !important;
+.age-icon {
+  width: 4rem !important;
+  height: 7rem !important;
   margin: 0 2rem !important;
 }
 
-.gender-choice {
+.age-choice {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 40vh;
 }
-/* .female-icon {
-  fill: pink;
-} */
 
-.select-gender {
+.select-age {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

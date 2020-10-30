@@ -16,7 +16,7 @@ export const LandingScreen = () => {
         Click the start button below to begin building your personalized patient
         profile
       </p>
-      <img src="/hospital-staff.png" />
+      <img src="/hospital-staff.png" alt="staff" />
       <Button
         className="start-button"
         variant="contained"

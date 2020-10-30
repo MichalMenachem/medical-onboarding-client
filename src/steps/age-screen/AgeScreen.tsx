@@ -1,48 +1,63 @@
 import React, { useContext } from "react";
 import "../../App.css";
-import "./gender-screen.css";
+import "./age-screen.css";
 import { StepsContext } from "../../contexts/StepsContext";
 import { Button } from "@material-ui/core";
 import { Header } from "../header/Header";
 import { PatientContext } from "../../contexts/PatientContext";
 
-export const GenderScreen = () => {
+export const AgeScreen = () => {
   const stepsContext = useContext(StepsContext);
   const patientContext = useContext(PatientContext);
 
   return (
-    <div className="carousel-item gender-background">
+    <div className="carousel-item age-background">
       <Header />
-      <p className="standard-text gender-text">Please select your gender</p>
-      <div className="select-gender">
-        <div className="gender-choice">
+      <p className="standard-text age-text">Please select your age</p>
+      <div className="select-age">
+        <div className="age-choice">
           <img
-            src="./assets/gender/female-gender.svg"
-            className="gender-icon"
-            alt="female"
+            src="./assets/age/small-plant.png"
+            alt="small"
+            className="age-icon"
           />
           <Button
             variant="contained"
             onClick={() => {
-              patientContext.setGender("Female");
+              patientContext.setAge("0-8");
             }}
           >
-            FEMALE
+            0-8
           </Button>
         </div>
-        <div className="gender-choice">
+        <div className="age-choice">
           <img
-            src="./assets/gender/male-gender.svg"
-            className="gender-icon"
-            alt="male"
+            src="./assets/age/medium-plant.png"
+            alt="medium"
+            className="age-icon"
           />
           <Button
             variant="contained"
             onClick={() => {
-              patientContext.setGender("Male");
+              patientContext.setAge("8-18");
             }}
           >
-            MALE
+            8-18
+          </Button>
+        </div>
+        <div className="age-choice">
+          <img
+            src="./assets/age/large-plant.png"
+            alt="large"
+            className="age-icon"
+          />
+          <Button
+            variant="contained"
+            onClick={() => {
+              patientContext.setAge("18+");
+            }}
+          >
+            18+
           </Button>
         </div>
       </div>

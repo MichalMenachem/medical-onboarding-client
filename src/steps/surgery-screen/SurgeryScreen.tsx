@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { Header } from "../header/Header";
 import { PatientContext } from "../../contexts/PatientContext";
-import { DbResults, getSurgeries } from "../../DataFetcher";
+import { DbResults, getSurgeries, postPatient } from "../../DataFetcher";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -25,6 +25,16 @@ export const SurgeryScreen = () => {
       setSurgeries(result.data);
     });
   }, []);
+
+  const handleFinish = async () => {
+    await postPatient({
+      age: patientContext.age!,
+      gender: patientContext.gender!,
+      language: patientContext.language!,
+      surgery: patientContext.surgery!,
+    });
+    stepsContext.next();
+  };
 
   return (
     <div className="carousel-item surgery-background">
@@ -46,17 +56,13 @@ export const SurgeryScreen = () => {
         </Select>
       </FormControl>
       <div className="navigation-buttons">
-        <Button
-          className="nav-button"
-          variant="contained"
-          onClick={() => stepsContext.prev()}
-        >
+        <Button variant="contained" onClick={() => stepsContext.prev()}>
           Prev
         </Button>
         <Button
-          className="nav-button"
+          disabled={patientContext.surgery === undefined}
           variant="contained"
-          onClick={() => stepsContext.next()}
+          onClick={handleFinish}
         >
           Finish
         </Button>

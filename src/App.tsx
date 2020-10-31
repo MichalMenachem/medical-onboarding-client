@@ -9,6 +9,7 @@ import { PatientContext } from "./contexts/PatientContext";
 import { AgeScreen } from "./steps/age-screen/AgeScreen";
 import { LanguageScreen } from "./steps/language-screen/LanguageScreen";
 import { SurgeryScreen } from "./steps/surgery-screen/SurgeryScreen";
+import { FinalScreen } from "./steps/final-screen/FinalScreen";
 
 function App() {
   const [curStep, setCurStep] = useState(0);
@@ -47,15 +48,14 @@ function App() {
             showStatus={false}
             dynamicHeight={false}
             selectedItem={curStep}
+            showIndicators={false}
           >
             <LandingScreen />
             <GenderScreen />
             <AgeScreen />
             <LanguageScreen />
             <SurgeryScreen />
-            <div className="carousel-item">{gender}</div>
-            <div className="carousel-item">{age}</div>
-            <div className="carousel-item">{language}</div>
+            <FinalScreen />
           </Carousel>
         </div>
       </StepsContext.Provider>

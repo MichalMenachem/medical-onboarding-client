@@ -48,15 +48,11 @@ export const LanguageScreen = () => {
         })}
       </div>
       <div className="navigation-buttons">
-        <Button
-          className="nav-button"
-          variant="contained"
-          onClick={() => stepsContext.prev()}
-        >
+        <Button variant="contained" onClick={() => stepsContext.prev()}>
           Prev
         </Button>
         <Button
-          className="nav-button"
+          disabled={patientContext.language === undefined}
           variant="contained"
           onClick={() => stepsContext.next()}
         >

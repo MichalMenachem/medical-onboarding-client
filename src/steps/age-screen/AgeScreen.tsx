@@ -43,16 +43,12 @@ export const AgeScreen = () => {
         })}
       </div>
       <div className="navigation-buttons">
-        <Button
-          className="nav-button"
-          variant="contained"
-          onClick={() => stepsContext.prev()}
-        >
+        <Button variant="contained" onClick={() => stepsContext.prev()}>
           Prev
         </Button>
         <Button
-          className="nav-button"
           variant="contained"
+          disabled={patientContext.age === undefined}
           onClick={() => stepsContext.next()}
         >
           Next

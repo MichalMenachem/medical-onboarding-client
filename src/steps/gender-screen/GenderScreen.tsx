@@ -45,17 +45,13 @@ export const GenderScreen = () => {
         })}
       </div>
       <div className="navigation-buttons">
-        <Button
-          className="nav-button"
-          variant="contained"
-          onClick={() => stepsContext.prev()}
-        >
+        <Button variant="contained" onClick={() => stepsContext.prev()}>
           Prev
         </Button>
         <Button
-          className="nav-button"
           variant="contained"
           onClick={() => stepsContext.next()}
+          disabled={patientContext.gender === undefined}
         >
           Next
         </Button>

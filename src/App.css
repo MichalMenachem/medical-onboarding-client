@@ -17,7 +17,6 @@
   min-height: 100vh;
   min-width: 100vw;
   height: 100vh;
-  background-color: pink;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -30,11 +29,6 @@
   padding: 0rem 1.5rem;
   font-size: 1.3rem;
   font-style: italic;
-}
-
-.nav-button {
-  background-color: #343c4c !important;
-  color: white !important;
 }
 
 .navigation-buttons {

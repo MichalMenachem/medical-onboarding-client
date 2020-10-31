@@ -1,11 +1,21 @@
 .age-background {
-  background: lightgreen;
+  background: #a8dda8;
 }
 
 .age-text {
-  color: #2d3648;
-  /* background-color: white; */
+  color: #effad3;
+  background-color: #2d6187;
   border-radius: 15px;
+}
+
+.age-button {
+  color: #effad3 !important;
+  background-color: #2d6187 !important;
+  font-weight: bold !important;
+}
+
+.chosen-age {
+  outline: 3px #effad3 solid !important;
 }
 
 .age-choice {

@@ -34,6 +34,11 @@ export const GenderScreen = () => {
               />
               <Button
                 variant="contained"
+                className={
+                  patientContext.gender === gender.name
+                    ? "gender-button chosen-gender"
+                    : "gender-button"
+                }
                 onClick={() => {
                   patientContext.setGender(gender.name);
                 }}
@@ -45,10 +50,17 @@ export const GenderScreen = () => {
         })}
       </div>
       <div className="navigation-buttons">
-        <Button variant="contained" onClick={() => stepsContext.prev()}>
+        <Button
+          className="gender-button"
+          variant="contained"
+          onClick={() => stepsContext.prev()}
+        >
           Prev
         </Button>
         <Button
+          className={
+            patientContext.gender !== undefined ? "gender-button" : undefined
+          }
           variant="contained"
           onClick={() => stepsContext.next()}
           disabled={patientContext.gender === undefined}

@@ -1,10 +1,10 @@
 .lang-background {
-  background: lightgreen;
+  background: #f8efd4;
 }
 
 .lang-text {
-  color: #2d3648;
-  /* background-color: white; */
+  color: #f8efd4;
+  background-color: #d7385e;
   border-radius: 15px;
 }
 
@@ -23,4 +23,14 @@
   align-items: center;
   max-height: 60%;
   margin: 0 0.5rem;
+}
+
+.lang-button {
+  background-color: #d7385e !important;
+  font-weight: bold !important;
+  color: #f8efd4 !important;
+}
+
+.chosen-lang {
+  outline: 2px #132743 solid !important;
 }

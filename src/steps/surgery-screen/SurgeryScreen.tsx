@@ -56,13 +56,20 @@ export const SurgeryScreen = () => {
         </Select>
       </FormControl>
       <div className="navigation-buttons">
-        <Button variant="contained" onClick={() => stepsContext.prev()}>
+        <Button
+          variant="contained"
+          className="surgery-nav"
+          onClick={() => stepsContext.prev()}
+        >
           Prev
         </Button>
         <Button
           disabled={patientContext.surgery === undefined}
           variant="contained"
           onClick={handleFinish}
+          className={
+            patientContext.surgery !== undefined ? "surgery-nav" : undefined
+          }
         >
           Finish
         </Button>

@@ -32,6 +32,11 @@ export const AgeScreen = () => {
               <img src={age.iconPath} alt={age.range} className="age-icon" />
               <Button
                 variant="contained"
+                className={
+                  patientContext.age === age.range
+                    ? "age-button chosen-age"
+                    : "age-button"
+                }
                 onClick={() => {
                   patientContext.setAge(age.range);
                 }}
@@ -43,10 +48,17 @@ export const AgeScreen = () => {
         })}
       </div>
       <div className="navigation-buttons">
-        <Button variant="contained" onClick={() => stepsContext.prev()}>
+        <Button
+          className="age-button"
+          variant="contained"
+          onClick={() => stepsContext.prev()}
+        >
           Prev
         </Button>
         <Button
+          className={
+            patientContext.age !== undefined ? "age-button" : undefined
+          }
           variant="contained"
           disabled={patientContext.age === undefined}
           onClick={() => stepsContext.next()}

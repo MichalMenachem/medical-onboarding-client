@@ -23,9 +23,7 @@ export const LanguageScreen = () => {
   return (
     <div className="carousel-item lang-background">
       <Header />
-      <p className="standard-text lang-text">
-        Please select the required language
-      </p>
+      <p className="standard-text lang-text">Please select your language</p>
       <div className="select-lang">
         {languages.map((language) => {
           return (
@@ -36,6 +34,11 @@ export const LanguageScreen = () => {
                 className="lang-icon"
               />
               <Button
+                className={
+                  patientContext.language === language.name
+                    ? "lang-button chosen-lang"
+                    : "lang-button"
+                }
                 variant="contained"
                 onClick={() => {
                   patientContext.setLanguage(language.name);
@@ -48,10 +51,17 @@ export const LanguageScreen = () => {
         })}
       </div>
       <div className="navigation-buttons">
-        <Button variant="contained" onClick={() => stepsContext.prev()}>
+        <Button
+          className="lang-button"
+          variant="contained"
+          onClick={() => stepsContext.prev()}
+        >
           Prev
         </Button>
         <Button
+          className={
+            patientContext.language !== undefined ? "lang-button" : undefined
+          }
           disabled={patientContext.language === undefined}
           variant="contained"
           onClick={() => stepsContext.next()}

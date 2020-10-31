@@ -5,10 +5,20 @@ import { StepsContext } from "../../contexts/StepsContext";
 import { Button } from "@material-ui/core";
 import { Header } from "../header/Header";
 import { PatientContext } from "../../contexts/PatientContext";
+import { useState } from "react";
+import { DbResults, getLanguages } from "../../DataFetcher";
+import { useEffect } from "react";
 
 export const LanguageScreen = () => {
   const stepsContext = useContext(StepsContext);
   const patientContext = useContext(PatientContext);
+  const [languages, setLanguages] = useState<DbResults.Language[]>([]);
+
+  useEffect(() => {
+    getLanguages().then((result) => {
+      setLanguages(result.data);
+    });
+  }, []);
 
   return (
     <div className="carousel-item lang-background">
@@ -17,51 +27,25 @@ export const LanguageScreen = () => {
         Please select the required language
       </p>
       <div className="select-lang">
-        <div className="lang-choice">
-          <img
-            src="./assets/language/shalom.png"
-            alt="hebrew"
-            className="lang-icon"
-          />
-          <Button
-            variant="contained"
-            onClick={() => {
-              patientContext.setLanguage("Hebrew");
-            }}
-          >
-            Hebrew
-          </Button>
-        </div>
-        <div className="lang-choice">
-          <img
-            src="./assets/language/hello.png"
-            alt="english"
-            className="lang-icon"
-          />
-          <Button
-            variant="contained"
-            onClick={() => {
-              patientContext.setLanguage("English");
-            }}
-          >
-            English
-          </Button>
-        </div>
-        <div className="lang-choice">
-          <img
-            src="./assets/language/salam.png"
-            alt="arabic"
-            className="lang-icon"
-          />
-          <Button
-            variant="contained"
-            onClick={() => {
-              patientContext.setLanguage("Arabic");
-            }}
-          >
-            Arabic
-          </Button>
-        </div>
+        {languages.map((language) => {
+          return (
+            <div className="lang-choice">
+              <img
+                src={language.iconPath}
+                alt={language.name}
+                className="lang-icon"
+              />
+              <Button
+                variant="contained"
+                onClick={() => {
+                  patientContext.setLanguage(language.name);
+                }}
+              >
+                {language.name}
+              </Button>
+            </div>
+          );
+        })}
       </div>
       <div className="navigation-buttons">
         <Button
